@@ -127,6 +127,25 @@
         <p>จะเห็นด้านล่างว่ามี tab เหมือน cmd ขึ้นมาบน vscode</p>
         <img src="images/img-3.png" class="img-fluid"/>
         <p>cmd ด้านล่างก็เหมือน cmd ที่เราใช้แหละ แค่ไม่ต้องเปลี่ยนโปรแกรมไปมา ชีวิตก็จะดีขึ้น หลังจากนี้เวลาจะสั่งอะไรในโปรเจกก็พิมพ์ในนี้ได้เลย</p>
+        <br>
+        <p>
+          ต่อมาเราจะต้อง install nodejs กับ npm ก่อน nodejs จะเป็น compiler ของโค้ด js และ npm จะเป็นโปรแกรมสำหรับจัดการ library ต่างๆที่โค้ดเราใช้
+        </p>
+        <a href="https://nodejs.org/en/download/">install Nodjs</a>
+        <p>ทีนี้เรามาเริ่มรันโปรแกรมกัน ก่อนอื่นเราจะ serve เว็บของเราบนเครื่องตัวเองก่อน โดนทำตามนี้</p>
+        <ol>
+          <li>
+            พิมพ์โค้ดนี้ลงใน terminal ด้านล่างเลย
+            <code>npm install</code>
+            <p>คำสั่งนี้จะอ่าน package.json และ package-lock.json เพื่อดูว่าโปรเจกของเราใช้ library อะไรบ้าง หลังจากนั้นจะ download library เหล่านั้นและเก็บไว้ใน node_modules(เริ่มคุ้นชื่อโฟลเด้อร์นี้ยังง)</p>
+          </li>
+          <li>
+            <code>node index.js</code>
+            <p>คำสั่งนี้จะใช้ nodejs รันโค้ด index.js ของเรา</p>
+            <img src="images/img-5.png" class="img-fluid"/>
+           <p>ถ้าขึ้นตามนี้แสดงว่าโปรแกรมเรารันแล้ว yess เข้าไปเชคดูได้ โดยเข้าลิ้งค์นี้ใน web browser "http://localhost:5000/"</p>
+          </li>
+        </ol>
       </div>
     </div>
   </body>
