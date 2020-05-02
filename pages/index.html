@@ -42,9 +42,75 @@
             <code>git config --global user.name "ชื่อ account หรือ email"</code>
             พอใส่ account เสร็จก็จะสามารถ pull โปรเจกนี้ไปใช้ได้ โดยการพิมพ์ 
             <code>git pull https://github.com/Chanokthorn/static-file-server-for-earnz.git</code>
+            <img src="images/img-2.png" class="img-fluid"/>
           </p>
           <p>
+          <p>
+            structure ของโปรเจกเราจะเป็นตามนี้
+          </p>
+            <pre><code>
+./
+|
+-- Procfile
+|
+-- node_modules
+|
 
+-- public/
+|   |
+|   -- images/
+|   |   |
+|   |   -- img-1.png
+|   |   |
+|   |   -- img-2.png
+|   -- style.css
+-- pages/
+|   |
+|   -- index.html
+-- index.js
+|
+-- package.json
+|
+|
+-- package-lock.json
+|
+|
+-- .gitignore
+              </code></pre>
+              <ol>
+                <li>
+                  <h3>Procfile</h3>
+                  <p>เป็นหนึ่งในไฟล์ setting ของ Heroku (ชื่อนี้อาจจะยังไม่คุ้น แต่เดี๋ยวเราจะได้ใช้มันละ)</p>
+                </li>
+                <li>
+                  <h3>node_modules</h3>
+                  <p>เป็นโฟลเด้อร์สำหรับเก็บ library ของ js ต่างๆ (ความจริงเป็นภาษา nodejs)</p>
+                </li>
+                <li>
+                  <h3>public</h3>
+                  <p>เป็นโฟลเด้อร์ที่เราจะใช้เก็บไฟล์ต่างๆที่ไม่ใช้ .html ความจริงไม่จำเป็นต้องแบ่งโฟลเด้อร์แบบนี้ แต่เราทำให้มันเป็นระบบจะได้ dev ได้ง่ายขึ้น</p>
+                </li>
+                <li>
+                  <h3>pages</h3>
+                  <p>เป็นโฟลเด้อร์สำหรับเก็บไฟล์ .html คอนเซปคือถ้าเรามีหน้า html กี่หน้า ก็ให้ใส่เข้ามาในโฟลเด้อร์นี้ทั้งหมด</p>
+                </li>
+                <li>
+                  <h3>index.js</h3>
+                  <p>ไฟล์ js หลักที่จะใช้สั่งให้เปิด process ที่จะ serve ไฟล์ต่างๆ เช่น .html, .css, .img ซึ่งเวลาเราเริ่ม process จะเริ่มจากการอ่านไฟล์นี้</p>
+                  <p>ในไฟล์นี้จะสั่งให้เมื่อเข้ามาในเว็บของเรา "https://{ชื่อเว็บเรา}/" จะ serve ไฟล์ pages/index.html ซึ่งก็คือหน้านี้ที่กำลังอ่านอยู่แหละ 
+                    ส่วนถ้าต้องการไฟล์อะไรเพิ่ม เช่น "https://{ชื่อเว็บเรา}/images/img-1.png จะ serve ไฟล์ images/img-1.png
+                    ถ้าจะทำให้ serve index.html เวลาเช้า "https://{ชื่อเว็บเรา}/pages/index.html" ก็ทำได้เหมือนกันนะ แต่ชื่อเว็บจะประหลาด เราเลยไม่ทำแบบนั้น
+                  </p>
+                </li>
+                <li>
+                  <h3>package.json, package-lock.json</h3>
+                  <p>คือไฟล์ที่คอยเก็บ dependency หรือ ชื่อและ version ของ js ที่เราจะใช้ ซึ่งเวลาโหลดมามันก็จะมาเก็บใน node_modules</p>
+                </li>
+                <li>
+                  <h3>.gitignore</h3>
+                  <p>เป็นไฟล์ setting ของ git ที่จะบอก git ว่าเราจะไม่อัพโหลดไฟล์ไหนขึ้นไปเก็บบ้าง มีประโยชน์เวลาจะไม่เก็บไฟล์ที่ใหญ่จริงๆ และโหลดทีหลังได้เช่น library ต่างๆ หรือไฟล์ที่มีข้อมูลสำคัญเช่น password</p>
+                </li>
+              </ol>
           </p>
         </section>
       </div>
