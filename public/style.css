@@ -1,4 +1,13 @@
-.basic-header {
-  color: cadetblue;
-  background-color: khaki;
+.page-container {
+  padding: 3em 20em 3em 20em;
+}
+code {
+  display: block;
+  background-color: gainsboro;
+}
+img {
+  display: block;
+}
+p {
+  display: block;
 }
