@@ -14,41 +14,45 @@
   </head>
   <body>
     <div class="page-container">
-      <div class="card">
         <h1>หวัดดีงับเอิน</h1>
         <p>
            ถ้าจะ serve html แสดงว่าเราเซียนขึ้นมาอีกขั้นแล้ว เวรี่กู้ด
           ต่อจากนี้จะเริ่มแอดว๊านส์ขึ้นละ มาดูกันว่าต้องทำอะไรบ้าง
         </p>
         <div class="container">
-          <h2>Git</h2>
-          <p>Git คือระบบในการทำ version control ซึ่งจะช่วยจัดการการทั้งการจัดเก็บและประวัติในการ develop ของเรา
-            โดย service ต่างๆที่เราจะใช้ในการ deploy web ของเราจะใช้งานร่วมกับระบบ git
-          </p>
-          <p>
-            เราสามารถ install git ได้โดยเข้าไปท่ี่<a href="https://git-scm.com/download/win">ลิ้งค์นี้</a>
-            เมื่อ install เราก็มาลองทดสอบว่าเวิร์คมั้ย โดยการเข้าโปรแกรม cmd แล้วพิมพ์
-            <code>git --version</code>
-            ถ้าขึ้น version เป็นตัวเลขออกมาแสดงว่าเวิ้คแล้ว
-            <img src="images/img-1.png"/>
-            ต่อมาเราก็เข้าไปที่ <a href="https://www.github.com">www.github.com</a> เพื่อสมัคร account ใหม่
-          </p>
-           <p>
-            github เป็นหนึ่งในหลายระบบที่เป็นตัวเก็บ git version ของงาน develop เราจะใช้ account ของ github ในการ pull โปรเจก
-            นี้มาใช้เป็นของตัวเอง
-          </p>
-          <p>
-            เมื่อสมัครเสร็จเราก็ใส่ account ของเราใน git เครื่องเรา โดยเข้าโปรแกรม cmd แล้วพิมพ์
-            <code>git config --global user.name "ชื่อ account หรือ email"</code>
-            พอใส่ account เสร็จก็จะสามารถ pull โปรเจกนี้ไปใช้ได้ โดยการพิมพ์ 
-            <code>git pull https://github.com/Chanokthorn/static-file-server-for-earnz.git</code>
-            <img src="images/img-2.png" class="img-fluid"/>
-          </p>
-          <p>
-          <p>
-            structure ของโปรเจกเราจะเป็นตามนี้
-          </p>
-            <pre><code>
+          <div class="card">
+            <h2>Git</h2>
+            <p>Git คือระบบในการทำ version control ซึ่งจะช่วยจัดการการทั้งการจัดเก็บและประวัติในการ develop ของเรา
+              โดย service ต่างๆที่เราจะใช้ในการ deploy web ของเราจะใช้งานร่วมกับระบบ git
+            </p>
+            <p>
+              เราสามารถ install git ได้โดยเข้าไปท่ี่<a href="https://git-scm.com/download/win">ลิ้งค์นี้</a>
+              เมื่อ install เราก็มาลองทดสอบว่าเวิร์คมั้ย โดยการเข้าโปรแกรม cmd แล้วพิมพ์
+              <code>git --version</code>
+              ถ้าขึ้น version เป็นตัวเลขออกมาแสดงว่าเวิ้คแล้ว
+              <img src="images/img-1.png"/>
+              ต่อมาเราก็เข้าไปที่ <a href="https://www.github.com">www.github.com</a> เพื่อสมัคร account ใหม่
+            </p>
+             <p>
+              github เป็นหนึ่งในหลายระบบที่เป็นตัวเก็บ git version ของงาน develop เราจะใช้ account ของ github ในการ pull โปรเจก
+              นี้มาใช้เป็นของตัวเอง
+            </p>
+            <p>
+              เมื่อสมัครเสร็จเราก็ใส่ account ของเราใน git เครื่องเรา โดยเข้าโปรแกรม cmd แล้วพิมพ์
+              <code>git config --global user.name "ชื่อ account หรือ email"</code>
+              พอใส่ account เสร็จก็จะสามารถ pull โปรเจกนี้ไปใช้ได้ โดยการพิมพ์ 
+              <code>git clone https://github.com/Chanokthorn/static-file-server-for-earnz.git</code>
+              <img src="images/img-2.png" class="img-fluid"/>
+            </p>
+            <p>
+          </div>
+        </div>
+        <div class="container">
+          <div class="card">
+            <p>
+              structure ของโปรเจกเราจะเป็นตามนี้
+            </p>
+              <pre><code>
 ./
 |
 -- Procfile
@@ -111,7 +115,8 @@
                 </li>
               </ol>
           </p>
-        </section>
+        </div>
+        </div>
       </div>
     </div>
   </body>
