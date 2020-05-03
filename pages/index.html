@@ -53,34 +53,34 @@
             <p>
               structure ของโปรเจกเราจะเป็นตามนี้
             </p>
-              <pre><code>
-./
-|
--- Procfile
-|
--- node_modules
-|
--- public/
-|   |
-|   -- images/
-|   |   |
-|   |   -- img-1.png
-|   |   |
-|   |   -- img-2.png
-|   -- style.css
--- pages/
-|   |
-|   -- index.html
--- index.js
-|
--- package.json
-|
-|
--- package-lock.json
-|
-|
--- .gitignore
-              </code></pre>
+              <div class="diagram-container">
+                  ./
+                  |
+                  -- Procfile
+                  |
+                  -- node_modules
+                  |
+                  -- public/
+                  |   |
+                  |   -- images/
+                  |   |   |
+                  |   |   -- img-1.png
+                  |   |   |
+                  |   |   -- img-2.png
+                  |   -- style.css
+                  -- pages/
+                  |   |
+                  |   -- index.html
+                  -- index.js
+                  |
+                  -- package.json
+                  |
+                  |
+                  -- package-lock.json
+                  |
+                  |
+                  -- .gitignore
+              </div>
               <ol>
                 <li>
                   <h3>Procfile</h3>
@@ -115,38 +115,90 @@
                   <p>เป็นไฟล์ setting ของ git ที่จะบอก git ว่าเราจะไม่อัพโหลดไฟล์ไหนขึ้นไปเก็บบ้าง มีประโยชน์เวลาจะไม่เก็บไฟล์ที่ใหญ่จริงๆ และโหลดทีหลังได้เช่น library ต่างๆ หรือไฟล์ที่มีข้อมูลสำคัญเช่น password</p>
                 </li>
               </ol>
+            </p>
+          </div>
+        </div>
+      <div class="container">
+        <div class="card">
+          <h2>Nodejs</h2>
+          <p>หลังจากมีไฟล์แล้ว เรามาลองรันโปรแกรมบนเครื่องก่อนดีกว่า เปิด vscode ขึ้นมาแล้วเข้า File -> Add Folder to Workspace แล้วเลือกโฟลเด้อร์โปรเจกที่เราสร้างขึ้นมา</p>
+          <img src="images/img-4.png" class="img-fluid"/>
+          <p>ต่อมา เข้า Terminal -> New Terminal </p>
+          <p>จะเห็นด้านล่างว่ามี tab เหมือน cmd ขึ้นมาบน vscode</p>
+          <img src="images/img-3.png" class="img-fluid"/>
+          <p>cmd ด้านล่างก็เหมือน cmd ที่เราใช้แหละ แค่ไม่ต้องเปลี่ยนโปรแกรมไปมา ชีวิตก็จะดีขึ้น หลังจากนี้เวลาจะสั่งอะไรในโปรเจกก็พิมพ์ในนี้ได้เลย</p>
+          <br>
+          <img src="images/img-6.png" class="img-fluid" style="max-width: 200px;"/>
+          <p>
+            ต่อมาเราจะต้อง install nodejs กับ npm ก่อน nodejs จะเป็น compiler ของโค้ด js และ npm จะเป็นโปรแกรมสำหรับจัดการ library ต่างๆที่โค้ดเราใช้
           </p>
+          <p>สามารถ install nodejs ได้ที่<a href="https://nodejs.org/en/download/">ลิ้งค์นี้</a></p>
+          <p>ทีนี้เรามาเริ่มรันโปรแกรมกัน ก่อนอื่นเราจะ serve เว็บของเราบนเครื่องตัวเองก่อน โดนทำตามนี้</p>
+          <ol>
+            <li>
+              พิมพ์โค้ดนี้ลงใน terminal ด้านล่างเลย
+              <code>npm install</code>
+              <p>คำสั่งนี้จะอ่าน package.json และ package-lock.json เพื่อดูว่าโปรเจกของเราใช้ library อะไรบ้าง หลังจากนั้นจะ download library เหล่านั้นและเก็บไว้ใน node_modules(เริ่มคุ้นชื่อโฟลเด้อร์นี้ยังง)</p>
+            </li>
+            <li>
+              <code>node index.js</code>
+              <p>คำสั่งนี้จะใช้ nodejs รันโค้ด index.js ของเรา</p>
+              <img src="images/img-5.png" class="img-thumbnail"/>
+             <p>ถ้าขึ้นตามนี้แสดงว่าโปรแกรมเรารันแล้ว yess เข้าไปเชคดูได้ โดยเข้าลิ้งค์นี้ใน web browser "http://localhost:5000/"</p>
+            </li>
+          </ol>
         </div>
-        </div>
-    <div class="container">
-      <div class="card">
-        <h2>Nodejs</h2>
-        <p>หลังจากมีไฟล์แล้ว เรามาลองรันโปรแกรมบนเครื่องก่อนดีกว่า เปิด vscode ขึ้นมาแล้วเข้า File -> Add Folder to Workspace แล้วเลือกโฟลเด้อร์โปรเจกที่เราสร้างขึ้นมา</p>
-        <img src="images/img-4.png" class="img-fluid"/>
-        <p>ต่อมา เข้า Terminal -> New Terminal </p>
-        <p>จะเห็นด้านล่างว่ามี tab เหมือน cmd ขึ้นมาบน vscode</p>
-        <img src="images/img-3.png" class="img-fluid"/>
-        <p>cmd ด้านล่างก็เหมือน cmd ที่เราใช้แหละ แค่ไม่ต้องเปลี่ยนโปรแกรมไปมา ชีวิตก็จะดีขึ้น หลังจากนี้เวลาจะสั่งอะไรในโปรเจกก็พิมพ์ในนี้ได้เลย</p>
-        <br>
-        <p>
-          ต่อมาเราจะต้อง install nodejs กับ npm ก่อน nodejs จะเป็น compiler ของโค้ด js และ npm จะเป็นโปรแกรมสำหรับจัดการ library ต่างๆที่โค้ดเราใช้
-        </p>
-        <a href="https://nodejs.org/en/download/">install Nodjs</a>
-        <p>ทีนี้เรามาเริ่มรันโปรแกรมกัน ก่อนอื่นเราจะ serve เว็บของเราบนเครื่องตัวเองก่อน โดนทำตามนี้</p>
-        <ol>
-          <li>
-            พิมพ์โค้ดนี้ลงใน terminal ด้านล่างเลย
-            <code>npm install</code>
-            <p>คำสั่งนี้จะอ่าน package.json และ package-lock.json เพื่อดูว่าโปรเจกของเราใช้ library อะไรบ้าง หลังจากนั้นจะ download library เหล่านั้นและเก็บไว้ใน node_modules(เริ่มคุ้นชื่อโฟลเด้อร์นี้ยังง)</p>
-          </li>
-          <li>
-            <code>node index.js</code>
-            <p>คำสั่งนี้จะใช้ nodejs รันโค้ด index.js ของเรา</p>
-            <img src="images/img-5.png" class="img-fluid"/>
-           <p>ถ้าขึ้นตามนี้แสดงว่าโปรแกรมเรารันแล้ว yess เข้าไปเชคดูได้ โดยเข้าลิ้งค์นี้ใน web browser "http://localhost:5000/"</p>
-          </li>
-        </ol>
       </div>
+      <div class="container">
+        <div class="card">
+          <h2>Heroku</h2>
+          <img src="images/img-10.png" class="img-fluid" style="max-width: 200px;"/>
+          <p>เป็น service ที่จะทำให้การ deploy และ serve เว็บของเราให้เป็นเรื่องง่ายมาก โดย Heroku จะทำงานด้วยคอนเซปของ git
+            เรามาเริ่มการ deploy ด้วย heroku กันก่อนดีกว่า
+          </p>
+          <p class="warning">รายละเอียดด้านล่างจะเป็นไปตาม document ของ Heroku 
+            แนะนำว่าหลังทำเสร็จหรือสงสัยอะไรให้อ่านเพิ่มเติมที่<a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up">ลิ้งค์นี้</a></p>
+          <ol>
+            <li>
+              <h3>Installation</h3>
+              <p>สามารถ sign up Heroku ได้ตาม<a href="https://signup.heroku.com/">ลิ้งค์นี้</a></p>
+              <p>ถัดจากนั้นเราก็ install heroku ตาม<a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up">ลิ้งค์นี้</a>เลย</p>
+              <p>เมื่อ install เสร็จสามารถเช็คผลได้ด้วยคำสั่งนี้</p>
+              <code>heroku</code>
+              <p>ถ้าผลลัพธ์ออกมาเป็นตามรูปตามด้านล่างแสดงว่าพร้อมใช้งาน heroku แล้วจ้า</p>
+              <img src="images/img-7.png" class="img-fluid"/>
+            </li>
+            <li>
+              <h3>Deploy</h3>
+              <p>เรามาเริ่มสร้างเว็บไซท์ของเราดีกว่า พิมพ์คำสั่ง</p>
+              <code>heroku create</code>
+              <img src="images/img-8.png" class="img-fluid"/>
+              <p>คำสั่งนี้จะทำให้ Heroku สร้าง server ขึ้นมาและพร้อมให้เรา push code ของเราขึ้นไป serve</p>
+              <p>url ที่ heroku สร้างให้จะมั่วๆเสมอ ตอนนี้ url ของเราเป็น <a href="https://thawing-reef-60871.herokuapp.com/">https://thawing-reef-60871.herokuapp.com/</a>
+                ซึ่งถ้าเราเข้าไปตอนนี้จะยังไม่มีอะไร เพราะเรายังไม่ได้ push คอนเท้นท์ของเรา
+              </p>
+              <p>การ push code ของเราทำได้ตามนี้</p>
+              <p>git push heroku master</p>
+              <p>เบื้องหลังคำสั่งนี้เราจะมาดูกันภายหลังนะ แต่คร่าวคือคำสั่งนี้จะ push โปรเจกของเราขึ้นไปบน online repository ของ heroku ซึ่งคำสั่ง "heroku create" ที่
+                เราสั่งไว้คราวที่แล้วได้แอบเซทคำว่า heroku บนโปรเจกเราเป็น online repository ที่จะอ่านและ deploy บน url https://thawing-reef-60871.herokuapp.com/ แล้ว
+              </p>
+              <img src="images/img-9.png" class="img-fluid"/>
+              <p>ถ้าขึ้นตามนี้แสดงว่าเราได้ push โค้ดเราไปบน online repository ของ heroku แล้วและ heroku ได้ deploy โปรเจกเราไปบน 
+                <a href="https://thawing-reef-60871.herokuapp.com/">https://thawing-reef-60871.herokuapp.com/</a> แล้ว สามารถเข้าไปเชคได้เลย ถ้าทำแล้วเวิ้คแสดงว่าเซียนแล้ว
+              </p>
+            </li>
+            <li>
+              <h3>Renaming</h3>
+              <p>หลังจากดีใจเสร็จแล้วเรามาทำให้ลิ้งค์เราสวยขึ้นอีกนิดนึง ในคำสั่งด้านล่างนี้ให้แทนคำว่า newname เป็นชื่อเว็บที่เราต้องการเลยนะ พยายามคิดคำที่มันจะไม่ซ้ำกับคนอื่น</p>
+              <p>เสร็จแล้ววว ทีนี้ลิ้งค์ของเราก็จะถูกเปลี่ยนละ ลิ้งค์เดิมจะไม่เวิร์คอีกต่อไป</p>
+              <p>นอกจากนี้เราสามารถเปิดเว็บของเราจากโปรเจกได้โดยไม่ต้องพิมพ์ url โดยสั่งตามนี้</p>
+              <code>heroku open</code>
+              <p>คำสั่งนี้จะเปิดเว็บของเราขึ้นมานั่นเอง</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+      --------------- ถัดจากนี้เราจะมาดูกันว่าจะเปลี่ยนแปลงไฟล์หรือเพิ่มคอนเท้นท์ของเราเองยังไงบ้าง รอติดตามตอนต่อไปครับ -----------------
     </div>
   </body>
 </html>

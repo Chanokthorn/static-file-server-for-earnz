@@ -11,3 +11,10 @@ img {
 p {
   display: block;
 }
+.diagram-container {
+  white-space: pre-wrap;
+}
+
+p.warning {
+  color: red;
+}
