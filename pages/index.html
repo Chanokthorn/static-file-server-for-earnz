@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="page-container">
-        <h1>หวัดดีงับเอิน</h1>
+        <h1>หวัดดีงับเอิน</h1><a href="/random_pics"><button class="btn btn-primary">random pics</button></a>
         <p>
            ถ้าจะ serve html แสดงว่าเราเซียนขึ้นมาอีกขั้นแล้ว เวรี่กู้ด
           ต่อจากนี้จะเริ่มแอดว๊านส์ขึ้นละ มาดูกันว่าต้องทำอะไรบ้าง
@@ -237,6 +237,92 @@
               <p>หลังจาก push ไปแล้ว heroku จะเริ่มทำงาน deploy ของมันเองจ้า</p>
             </li>
           </ol>
+          <h5>เมื่อเรารู้แล้วว่าการเปลี่ยนแปลงทำยังไงก็มาเริ่มเปลี่ยนกันดีกว่า</h5>
+          <ol>
+            <li>
+              <h3>new page</h3>
+              <p>เรามาสร้างหน้าใหม่เพิ่มกันดีกว่า</p>
+              <ol>
+                <li>
+                  สร้างไฟล์ใหม่ในโฟลเด้อร์ pages ชื่อ randomPics.html
+                </li>
+                <li>
+                  ก๊อปcodeนี้ใส่ลงไปใน randomPics.html
+                  <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Serving static file&lt;/title&gt;
+    &lt;!-- IMORT BOOTSTRAP --&gt;
+    &lt;link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    /&gt;
+    &lt;!-- IMPORT CUSTOM STYLES --&gt;
+    &lt;link rel="stylesheet" href="style.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="page-container"&gt;
+        &lt;h1&gt;Random images to show when you're bored&lt;/h1&gt;
+        &lt;div class="card"&gt;
+            &lt;img
+            class="img-fluid"
+            src="https://picsum.photos/500/400"
+            alt="Sunset in the mountains"
+          /&gt;
+    &lt;/div&gt;
+    &lt;a href="/"&gt;&lt;button class="btn btn-primary"&gt;home page&lt;/button&gt;&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+                  </code></pre>
+                </li>
+                </ol>
+            </li>
+            <li>
+              <h3>add new page to known url</h3>
+              <p>หลังเพิ่ม page ไปแล้ว ไฟล์ js ที่เราเขียนไว้ยังไม่รู้จักหน้านั้น ดังนั้นเรามาเพิ่ม url ที่จะไปสู่หน้านั้นกันใน index.js ดีกว่า</p>
+              <p>เพิ่มโค้ดนี้ไปในบรรทัดก่อนถึง ".listen(PORT, () => console.log(`Listening on ${PORT}`));"</p>
+              <pre><code>
+.get("/random_pics", function (req, res) {
+  res.sendFile(__dirname + "/pages/randomPics.html");
+})
+              </code></pre>
+              <p>โค้ดนี้จะทำให้ process ที่ serve รู้ว่าเมื่อเข้า url "{ชื่อเว็บเรา}/radom_pics" แล้วจะส่งหน้า pages/randomPics.html กลับไป</p>
+              <p>เนื่องจากเราแก้ไขไฟล์ index.js เราจะต้อง compile และ run โค้ดใหม่ ใน terminal ที่กำลังรัน process serve ไฟล์ของเราอยู่ 
+                กด ctrl + c เพิ่อหยุด process และสั่งรัน process ใหม่
+              </p>
+              <code>node index.js</code>
+              <p>เราลองเข้าหน้าใหม่ของเรากัน เข้า url <a href="http://localhost:5000/random_pics">http://localhost:5000/random_pics</a></p>
+              <img src="images/img-14.png" class="img-fluid"/>
+              <p>สวยพี่สวย</p>
+            </li>
+            <li>
+              <h3>เพิ่มปุ่มเพื่อไปหน้าใหม่ของเรา</h3>
+              <p>จะเห็นได้ว่าหน้าใหม่ของเรามีปุ่มที่พาเรากลับมาหน้าหลักของเราแล้ว เรามาเพิ่มปุ่นที่จะส่งไปหน้าใหม่กัน</p>
+              <p>ใน index.html ถัดจาาก &lt;h1&gt;หวัดดีงับเอิน&lt;/h1&gt; เพิ่ม
+                <pr><code>
+                  &lt;a href="/random_pics"&gt;&lt;button class="btn btn-primary"&gt;random pics&lt;/button&gt;&lt;/a&gt;
+                </code></pr>
+              </p>
+              <p>จะได้หน้าตาเว็บเดิมของเราที่เมื่อกดปุ่ม random pics แล้วจะนำเราไปสู่หน้าใหม่ของเรา</p>
+              <img src="images/img-15.png" class="img-fluid"/>
+            </li>
+            <li>
+              <h3>push changes</h3>
+              <p>เสร็จแล้วว ทีนี้เราก็มาทำการ push file ขึ้น heroku ตามขั้นตอนที่คุยกันมาแล้วดีกว่า เหมือนเดิม ตามนี้เลย</p>
+              <code>git add .</code>
+              <code>git commit -m "my first commit! added randomPics page"</code>
+              <code>git push heroku master</code>
+              <p>แล้วเว็บของเราก็จะมีหน้าใหม่ที่เปลี่ยนหน้าไปมาได้แล้ว</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="container">
+        <h3>CONGRATULATIONS ครัชช เราได้เรียนรู้วิธี deploy เว็บเป็นของตัวเองแล้ว ได้เอาไปใช้ทำอะไรก็อย่าลืมมาอวดกันนะ รอติดตามเนื้อหาใหม่ๆต่อไปนะครับบ :)</h3>
+      </div>
     </div>
   </body>
 </html>
